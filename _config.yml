@@ -28,7 +28,7 @@ navigation:
   - name: Tags
     url: /tags
   - name: Theme
-    url: https://kamshi5948.github.io/blog
+    url: https://github.com/AWEEKJ/kiko-now
 
 # Pagination
 paginate: 5
