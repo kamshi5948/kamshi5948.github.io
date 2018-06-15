@@ -3,7 +3,7 @@
 #
 
 # Name of your site (displayed in the header)
-name: Kiko Now
+name: Kamshi!!
 
 # Short bio or description (displayed in the header)
 description: Web Developer from Somewhere
@@ -13,7 +13,7 @@ description: Web Developer from Somewhere
 #
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+avatar:
 
 # Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
 # and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
@@ -40,7 +40,7 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: AWEEKJ/kiko-now
+  github:
   googleplus: # anything in your profile username that comes after plus.google.com/
   instagram:
   linkedin:
@@ -52,24 +52,24 @@ footer-links:
   youtube: # channel/<your_long_string> or user/<user-name>
 
 # Text under the icons in footer
-footer-text: © 2017 Kiko Now
+footer-text: © 2018
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
-disqus: kiko-now # <username>.disqus.com
+disqus: # <username>.disqus.com
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: https://aweekj.github.io/
+url: "https://kamshi5948.github.io/blog"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: /kiko-now
+baseurl: "/blog"
 
 #
 # !! You don't need to change any of the configuration flags below !!
