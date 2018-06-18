@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>데이터 모델링 – Inu IT Blog – Web Developer from Somewhere</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="분석
+
+  분석미흡 : 현행시스템의 프로그램 복잡도 미파악, 숨어있는 업무에 대한 누락 발생
+  업무배경도 : 역할, 시스템간의 흐름도
+  업무기능분해도 : 1레벨 ~ 5레벨 단위프로세스 정의
+  업무흐름도 : 역할, 단위프로세스 flow chart
+
+
+" />
+    <meta property="og:description" content="분석
+
+  분석미흡 : 현행시스템의 프로그램 복잡도 미파악, 숨어있는 업무에 대한 누락 발생
+  업무배경도 : 역할, 시스템간의 흐름도
+  업무기능분해도 : 1레벨 ~ 5레벨 단위프로세스 정의
+  업무흐름도 : 역할, 단위프로세스 flow chart
+
+
+" />
+    
+    <meta name="author" content="Inu IT Blog" />
+
+    
+    <meta property="og:title" content="데이터 모델링" />
+    <meta property="twitter:title" content="데이터 모델링" />
+    
+  <!-- Async font loading -->
+<script>
+  window.WebFontConfig = {
+      custom: {
+          families: ['Spoqa Han Sans:100,300,400,700'],
+          urls: ['https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css']
+      },
+      timeout: 60000
+  };
+  (function(d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+      s.parentNode.insertBefore(wf, s);
+  })(document);
+</script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="/blog/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Inu IT Blog - Web Developer from Somewhere" href="/blog/feed.xml" />
+
+  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name"><a href="/blog/">Inu IT Blog</a></h1>
+        <p class="site-description">Web Developer from Somewhere</p>
+      </div>
+
+      <nav>
+        
+        
+        <a href="/blog/">Blog</a>
+        
+        
+        
+        <a href="/blog/about">About</a>
+        
+        
+        
+        <a href="/blog/archive">Archive</a>
+        
+        
+        
+        <a href="/blog/tags">Tags</a>
+        
+        
+        
+        <a href="https://github.com/AWEEKJ/kiko-now">Theme</a>
+        
+        
+      </nav>
+    </header>
+  </div>
+</div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>데이터 모델링</h1>
+
+  <div clsss="meta">
+    <span class="date">
+      2018-06-18
+    </span>
+
+    <ul class="tag">
+      
+      <li>
+        <a href="http://localhost:4000/blog/tags#데이터 모델링">
+          데이터 모델링
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="entry">
+    <h5 id="분석">분석</h5>
+<ul>
+  <li>분석미흡 : 현행시스템의 프로그램 복잡도 미파악, 숨어있는 업무에 대한 누락 발생</li>
+  <li>업무배경도 : 역할, 시스템간의 흐름도</li>
+  <li>업무기능분해도 : 1레벨 ~ 5레벨 단위프로세스 정의</li>
+  <li>업무흐름도 : 역할, 단위프로세스 flow chart</li>
+</ul>
+
+<h5 id="화면설계">화면설계</h5>
+<ul>
+  <li>공통모듈화, 코드표준화</li>
+  <li>화면정의서, 화면설계서</li>
+</ul>
+
+<h5 id="비지니스로직설계">비지니스로직설계</h5>
+<ul>
+  <li>프로시저 : 강사리스트접수(배치)</li>
+  <li>프로그램 : 강사조회</li>
+  <li>모듈 : 강사생성</li>
+  <li>설계목적 : 유연성, 포함성</li>
+  <li>설계원리 : 모듈, 높은 응집도, 낮은 결합도</li>
+</ul>
+
+<h5 id="모듈화">모듈화</h5>
+<ul>
+  <li>복잡한 계산식. 자주 사용 Vali, 항상 연관된 입력값 검증, 테이블 반영사항 기준</li>
+  <li>공통화영역 도출</li>
+  <li>하나의 모듈을 호출하는 상위모듈이 많으면 좋음(Fan-in)</li>
+  <li>결합도 낮게, 응집도 높게</li>
+</ul>
+
+<hr />
+
+<h5 id="논리-데이터-데이터모델링">논리 데이터 데이터모델링</h5>
+<ul>
+  <li>논리데이터모델링 : 정규화, 중복배제, 유연성</li>
+  <li>물리데이터모델링 : 반정규화, 중복허용, 파티셔닝/집계테이블</li>
+  <li>주제영역 : 고객, 주문</li>
+  <li>엔터티 : 고객주문, 고객연락처, 거래처</li>
+  <li>관계 : Membership, Cardinality, Optionality</li>
+  <li>식별자의 규칙 : 유일성, 최소성, Not Null, Never change</li>
+  <li>상관 모델링 : CRUD 매트릭스, DFD(Data Flow Diagram), 화면정의서</li>
+</ul>
+
+<h6 id="정규화">정규화</h6>
+<ul>
+  <li>입력,수정,삭제의 이상현상 제거</li>
+  <li>중복된 데이터가 없도록 -&gt; 프로그램 단순화</li>
+  <li>데이터 모델 구조화</li>
+</ul>
+
+<h6 id="1차-정규화">1차 정규화</h6>
+<ul>
+  <li>복수의 속성값을 분리</li>
+  <li>주문, 주문목록</li>
+</ul>
+
+<h6 id="2차-정규화">2차 정규화</h6>
+<ul>
+  <li>주식별자 전체에 종속적이지 않은 속성 별도의 엔터티로 분리</li>
+  <li>주문, 주문목록, 제품</li>
+</ul>
+
+<h6 id="3차-정규화">3차 정규화</h6>
+<ul>
+  <li>비식별자에 종속적인 속성을 별도의 엔터티로 분리</li>
+  <li>주문, 주문목록, 제품, 고객</li>
+</ul>
+
+<h6 id="보이스-코드-정규화">보이스 코드 정규화</h6>
+<ul>
+  <li>식별자 간에 종속성이 있는 경우 별도의 엔터티로 분리</li>
+  <li>납품(납품업체코드, 납품회사명, 제품코드) -&gt; 납품회사, 납품</li>
+</ul>
+
+<h6 id="4차-정규화">4차 정규화</h6>
+<ul>
+  <li>여러 값을 중복으로 삽입해야 하는 종속성 제거</li>
+  <li>지원내역(사원번호, 기술코드, 프로젝트코드) -&gt; 사원, 기술, 프로젝트, 지원내역) -&gt; 기술, 보유기술, 사원, 지원프로젝트, 프로젝트</li>
+</ul>
+
+<hr />
+
+<h5 id="데이터-표준화">데이터 표준화</h5>
+<ul>
+  <li>도메인(날짜, 번호, 금액, ID), 데이터탑입(길이)</li>
+</ul>
+
+<h5 id="테스트기법">테스트기법</h5>
+<h6 id="명세기반-테스틩input-output에-기반한-방법">명세기반 테스틩(input-output에 기반한 방법)</h6>
+<ul>
+  <li>균등분할</li>
+  <li>경계값분석</li>
+  <li>결정테이블(테스트조건, 기대결과, 테스트케이스작성)</li>
+  <li>유스케이스 (이벤트플로우, 시나리오)</li>
+  <li>페어와이즈</li>
+  <li>구현은 되었지만 기능명세서에 정의되지 않은 숨어있는 기능과 관련된 에러 찾지 못함</li>
+  <li>테스트 결과의 우연한 일치가 발생할 수 있음</li>
+</ul>
+
+<h6 id="구조기반-테스팅">구조기반 테스팅</h6>
+<ul>
+  <li>프로그램 내부 구조를 정의한 명세서나 소스코드를 기반으로 테스트 케이스 도출(Logic)</li>
+  <li>구문커버리지, 결정커버리지, 조건커버리지,조건결정, 다중조건</li>
+  <li>기능명세서 상에 정의 되었으나 구현되지 않은 누락된 기능은 찾지 못함</li>
+  <li>명세상에 정의된 내용과 다르게 작동하는 기능들은 발견하지 못함</li>
+  <li>적용시간과 비용 높음</li>
+</ul>
+
+<h6 id="경험기반-테스팅">경험기반 테스팅</h6>
+<ul>
+  <li>오류추측, 체크리스트, 탐색적 테스팅</li>
+  <li>테스트의 경험과 역량에 따라 품질차이 발생, 복잡한 로직테스트에 한계</li>
+</ul>
+
+<hr />
+
+<h5 id="물리데이터모델링">물리데이터모델링</h5>
+<ul>
+  <li>반정규화대상 : 범위처리빈도수조사, 대량의범위처리조사, 집계성프로세스조사, 테이블조인개수</li>
+  <li>다른방법유도검토 : 뷰(VIEW) 테이블, 클러스터링적용, 인덱스의조정, 응용어플리케이션</li>
+</ul>
+
+<h5 id="번호채번">번호채번</h5>
+<h6 id="채번테이블">채번테이블</h6>
+<ul>
+  <li>단점 : Update lock 밠생 가능성</li>
+  <li>장점 : 누락이 없는 순차적인 번호구성 가능함</li>
+</ul>
+
+<h6 id="시퀀스오브젝트">시퀀스오브젝트</h6>
+<ul>
+  <li>단점 : 순차적인 번호 생성 보장불가, 관리 어려움</li>
+  <li>장점 : 중복가능성 없음, lock 문제 없음</li>
+</ul>
+
+<h6 id="sql문-이용max--1">SQL문 이용(MAX + 1)</h6>
+<ul>
+  <li>단점 : Transtion 집중될 경우 insert 시 중복에러 발생함</li>
+  <li>장점 : Lock문제 없음</li>
+</ul>
+
+<h6 id="관계형-데이터베이스의-무결성">관계형 데이터베이스의 무결성</h6>
+<ul>
+  <li>엔터티무결성 : 모든 데이터는 유일해야 함 / 식별자 / PK, UK</li>
+  <li>참조무결성 : 데이터는 홀로 존재X, 누군가에게 의지해야함 / 관계,외부식별자 / PK, FK</li>
+  <li>도메인무결성 : 컬럼값은 일정한 제약 가짐 / 없음 / Data Type, Size, Null 여부, Default, Contraint</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>단어사전 : 고객, 금액, 매출, 구분</li>
+  <li>도메인사전 : 금액, 금액_15, DECIMAL(15)</li>
+  <li>표준단어사전 : 고객매출금액</li>
+</ul>
+
+  </div>
+
+  <div class="pagination">
+    
+    
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="https://www.twitter.com/jekyllrb" class="icon-26 twitter" title="Twitter"><svg viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"/></svg><!--[if lt IE 9]><em>Twitter</em><![endif]--></a></li>
+  
+
+  
+
+</ul>
+
+
+
+<p>© 2018</p>
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
