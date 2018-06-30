@@ -6,6 +6,7 @@ comments: true
 ---
 ### servlet-context
 
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -42,5 +43,39 @@ comments: true
             <beans:ref bean="loginInterceptor"/>
         </interceptor>
     </interceptors>
-
 </beans:beans>
+```
+
+### root-context
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="org.mariadb.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mariadb://localhost:3306/sample"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="admin"></property>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"></property>
+        <property name="mapperLocations" value="classpath*:/mybatis/sql/*.xml"></property>
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+    </bean>
+
+    <!-- ajax 호출 시 406에러 잡기 -->
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"/>
+    <bean id="ajaxView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+        <property name="objectMapper" ref="objectMapper"/>
+    </bean>
+</beans>
+```
