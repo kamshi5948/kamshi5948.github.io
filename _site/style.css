@@ -64,7 +64,7 @@ html {
 }
 
 body {
-  font-family: "Spoqa Han Sans", "Source Sans Pro", "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", "Verdana", "Arial", "Dotum", sans-serif;
+  font-family: "nanumbarungothic", "Spoqa Han Sans", "Source Sans Pro", "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", "Verdana", "Arial", "Dotum", sans-serif;
   color: #343a40;
   line-height: 1.6;
 }
@@ -366,28 +366,29 @@ img {
   margin: 0;
   color: #333;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 28px;
+  font-family: "nanumbarungothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
   letter-spacing: 1px;
 }
 
+/*
 .site-description {
   margin: -5px 0 0 0;
-  color: #666;
+  color: $gray;
   font-size: 16px;
-}
-@media screen and (max-width: 640px) {
-  .site-description {
+
+  @include mobile {
     margin: 3px 0;
   }
 }
-
+*/
 nav {
   float: right;
   margin-top: 23px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "nanumbarungothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
+  font-weight: 400;
 }
 @media screen and (max-width: 640px) {
   nav {
@@ -401,7 +402,7 @@ nav a {
   margin-left: 20px;
   color: #333;
   text-align: right;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 @media screen and (max-width: 640px) {
