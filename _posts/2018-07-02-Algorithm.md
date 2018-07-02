@@ -6,6 +6,7 @@ comments: true
 ---
 
 ##### 패턴 정규식
+
 ```
 boolean i = Pattern.matches(pattern, input);
 
@@ -21,6 +22,7 @@ boolean i = Pattern.matches(pattern, input);
 ```
 
 ##### 버블정렬(1차원)
+
 ```
 public static int[] sort(int a[]) {
     int tmp;
@@ -39,6 +41,7 @@ public static int[] sort(int a[]) {
 ```
 
 ##### 버블정렬(2차원)
+
 ```
 public static String[][] arrSort(String a[][]) {
     String[] tmp;
