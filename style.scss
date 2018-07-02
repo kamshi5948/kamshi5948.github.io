@@ -356,11 +356,13 @@ img {
   color: $darkGray;
   cursor: pointer;
   font-family: $helveticaNeue;
-  font-weight: 300;
-  font-size: 28px;
+  //font-weight: 300;
+  font-weight: 400;
+  font-size: 24px;
   letter-spacing: 1px;
 }
 
+/*
 .site-description {
   margin: -5px 0 0 0;
   color: $gray;
@@ -370,12 +372,14 @@ img {
     margin: 3px 0;
   }
 }
+*/
 
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
+  font-weight: 400;
 
   @include mobile {
     float: none;
@@ -388,7 +392,7 @@ nav {
     margin-left: 20px;
     color: $darkGray;
     text-align: right;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
 
     @include mobile {
