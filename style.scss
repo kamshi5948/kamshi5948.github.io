@@ -42,11 +42,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h5 {
-  font-weight: bold;
+  //font-weight: bold;
+  font-weight: 400;
 }
 
 h1 {
-  font-size: 30px;
+  //font-size: 30px;
+  font-size: 26px;
   a {
     color: inherit;
   }
@@ -357,8 +359,9 @@ img {
   cursor: pointer;
   font-family: $helveticaNeue;
   //font-weight: 300;
+  //font-weight: 400;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 26px;
   letter-spacing: 1px;
 }
 
