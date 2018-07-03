@@ -65,3 +65,40 @@ public static String[][] arrSort(String a[][]) {
     return a;
 }
 ```		
+
+##### 진법변환
+
+```
+public static String notation(int num, int notation) {
+    String result = "";
+    String[] tmpArr = new String[20];
+    int idx = 0;
+    while(num > 0){
+        String temp = "";
+        if(num % notation == 10) {
+            temp = "A";
+        } else if(num % notation == 11) {
+            temp = "B";
+        } else if(num % notation == 12) {
+            temp = "C";
+        } else if(num % notation == 13) {
+            temp = "D";
+        } else if(num % notation == 14) {
+            temp = "E";
+        } else if(num % notation == 15) {
+            temp = "F";
+        } else {
+            temp = String.valueOf(num % notation);
+        }
+
+        tmpArr[idx++] = temp;
+        num = num / notation;
+    }
+
+    for(int i = idx - 1; i >= 0; i--) {               
+        result += tmpArr[i];
+    }
+
+    return result;
+}
+```		
