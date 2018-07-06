@@ -8,6 +8,20 @@ comments: true
 ##### 패턴 정규식
 
 ```
+//LTRIM(0제거)
+String input = "0012";
+String tmp = Pattern.compile("^[0]+").matcher(input).replaceAll("");
+
+//LTRIM(공백제거)
+Pattern.compile("^\\s+")
+
+//RTRIM(공백제거)
+Pattern.compile("\\s+$")
+
+String ltrim = s.replaceAll("^\\s+","");
+String rtrim = s.replaceAll("\\s+$","");
+
+//정규식패턴
 boolean i = Pattern.matches(pattern, input);
 
 1) 숫자만 : ^[0-9]*$
