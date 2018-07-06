@@ -7,7 +7,7 @@ comments: true
 
 ##### 블록게임
 
-```
+```java
 public static void main(String[] args) throws IOException {
     /*
     CCBDE
@@ -119,10 +119,10 @@ public static void main(String[] args) throws IOException {
 ```
 
 
-
+<br>
 ##### 뉴스클러스터링
 
-```
+```java
 public static void main(String[] args) throws IOException {
     /*
     FRANCE  french  16384
@@ -244,10 +244,10 @@ public static void main(String[] args) throws IOException {
 }
 ```
 
-
+<br>
 ##### 비밀지도
 
-```
+```java
 public static void main(String[] args) throws IOException {
     /*
     n   5
@@ -372,10 +372,10 @@ public static String notation(int num, int notation) {
     return result;
 }
 ```
-
+<br>
 ##### 자동완성
 
-```
+```java
 public static void main(String[] args) throws IOException {
     /*
     [“go”,”gone”,”guild”]   7
@@ -441,10 +441,10 @@ public static boolean chk(String[] auto, char curChar, int idx) {
     return result;
 }
 ```
-
+<br>
 ##### 바로그곡
 
-```
+```java
 public static void main(String[] args) throws IOException {
     //바로그곡
     /*
@@ -561,10 +561,10 @@ public static String[][] arrSort(String a[][]) {
     return a;
 }
 ```
-
+<br>
 ##### 압축
 
-```
+```java
 public static void main(String[] args) throws IOException {
 
     //압축
@@ -642,10 +642,10 @@ public static void main(String[] args) throws IOException {
     }
 }
 ```
-
+<br>
 ##### 숫자말하기게임(진법)
 
-```
+```java
 public static void main(String[] args) throws IOException {
 
     //진법 n, 미리 구할 숫자의 갯수 t, 게임에 참가하는 인원 m, 튜브의 순서 p 가 주어진다.
