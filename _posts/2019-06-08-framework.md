@@ -35,7 +35,10 @@ comments: true
 ## JPA  
   Java Persistent API, ORM(Oject Relationship Management), hibernate, RDB 테이블을 객체지향적으로 사용하기 위함
 
-## Querydsl 
+## Querydsl
   type-safe한 쿼리를 위한 Domain Specific Language
   SQL query는 문자로 type-check가 불가능하고 실행해 보기 전까지 작동여부 확인이 어렵다.
   java처럼 type-safe하게 개발 할 수 있게 해주는 프레임워크   
+
+## flyway
+  DB 마이그레이션 tool, 자동으로 개발DB와 운영DB를 맞춰줌
