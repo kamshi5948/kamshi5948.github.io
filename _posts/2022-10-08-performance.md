@@ -97,16 +97,18 @@
 	* 트랜잭션 구간 상세 분석을 수행(동일한 두 트랜잭션 분석 결과 특정 구간이 아닌 각 구간 전체의 처리 시간이 선형적으로 증가하는 것으로 판단할 때 자원 이슈가 원인일 가능성이 큼)
 	* 서버 및 DB 자원 사용률 점검(DB서버 NIC의 네트워크 패킷 전송량이 20분 주기로 급격하게 증가 -> NIC 교체)
 * 대량 I/O로 인한 성능 저하
-> Disk I/O 급증 -> DB서버의 CPU 사용량 증가  
-> 대용량 테이블 Full Scan -> Index Scan 되도록 SQL 튜닝  
+	* Disk I/O 급증 -> DB서버의 CPU 사용량 증가
+	* 대용량 테이블 Full Scan -> Index Scan 되도록 SQL 튜닝
 * NLB idle Connection Timeout 에 의한 인터페이스 오류 발생
-> 30분 동안 기간과 WEB서버간 트랜잭션 없어서 WEB서버에서 keepalive 패킷을 전송하지만, RST 응답이 오고, 신규 세션을 생성함  
-> 대외기간과 WEB서버간 네트워크 장비에서 Connection이 끊겼을 것으로 추정 -> 방화벽, NLB의 idle timeout 값 조사   
-> NLB timeout 보다 WEB 서버의 keep-alive 파라미터의 값이 작아야 함  
-> 서버의 커널 파라미터(net.ipv4.tcp_keepalive_time_을 default 2시간에서 5분으로 변경하여 5분마다 keep-alive packet을 전송하여 세션을 유지하도록 함  
+	* 30분 동안 기간과 WEB서버간 트랜잭션 없어서 WEB서버에서  keepalive 패킷을 전송하지만, RST 응답이 오고, 신규 세션을 생성함
+	* 대외기간과 WEB서버간 네트워크 장비에서 Connection이 끊겼을 것으로 추정 -> 방화벽, NLB의 idle timeout 값 조사 
+	* NLB timeout 보다 WEB 서버의 keep-alive 파라미터의 값이 작아야 함
+	* 서버의 커널 파라미터(net.ipv4.tcp_keepalive_time)을 default 2시간에서 5분으로 변경하여 5분마다 keep-alive packet을 전송하여 세션을 유지하도록 함
 * Binary Log I/O 지연에 따른 MariaDB 성능 저하
-> MariaDB의 binary log는 replcation과 복구에 사용, 해당 파일의 IO성능은 DBMS 성능과 밀접한 관련이 있으므로 성능이 빠른 Local Disk로 변경  
-*
+	* MariaDB의 binary log는 replcation과 복구에 사용, 해당 파일의 IO성능은 DBMS 성능과 밀접한 관련이 있으므로 성능이 빠른 Local Disk로 변경
+
+- - - -
+
 1. 비효율적인 아키텍처 구조 및 부족한 용량에 따른 시스템 처리 한계
 > 대규모 거래 집중으로 인한 DB CPU 병목  
 > DB서버 CPU 자원이 부족하여 시스템 증설 방안 필요   
